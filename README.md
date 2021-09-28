@@ -16,3 +16,5 @@ Just the basics of Vue.js 2
         Faster because just adds display none instead of removing from the DOM
 
     'v-for' directive allows us to loop over an array and render data from within it.
+
+    'v-on' or @ which let’s Vue know we’re listening for events
