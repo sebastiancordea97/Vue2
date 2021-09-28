@@ -5,10 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product App</title>
+    <link rel="stylesheet" href="/assets/product_style.css">
 </head>
 <body>
+
+    <div class="nav-bar"></div>
     <div id="app">
-        <h1>{{ product }}</h1>
+        <div class="product">
+            <div class="product-image">
+                <img v-bind:src="image" alt="">
+            </div>
+
+            <div class="product-info">
+                <h1>{{ product }}</h1>
+                <a :href="link">Here is a link to The Cut</a>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="main.js"></script>
