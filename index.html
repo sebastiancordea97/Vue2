@@ -11,7 +11,9 @@
 
     <div class="nav-bar"></div>
     <div id="app">
+
         <div class="product">
+
             <div class="product-image">
                 <img v-bind:src="image" alt="">
             </div>
@@ -19,8 +21,24 @@
             <div class="product-info">
                 <h1>{{ product }}</h1>
                 <a :href="link">Here is a link to The Cut</a>
+                <p v-if="inventory => 10">Product is in stock!</p>
+                <p v-else-if="inventory < 10 && inventory > 0">Product is almost sold out!</p>
+                <p v-else>Product is out of stock!</p>
+                <p v-show="onSale">Product is on sale for 50% off</p>
+                <ul>
+                    <li v-for="item in details" :key="">
+                        {{ item }}
+                    </li>
+                </ul>
+
+                <div v-for="variant in variants" v-bind:key="variant.variantId">
+                    <p>{{variant.variantColor}}</p>
+                </div>
+
             </div>
+
         </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="main.js"></script>
